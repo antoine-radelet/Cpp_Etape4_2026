@@ -1,27 +1,32 @@
 #include "Professor.h"
+
+#include <string>
 using namespace std;
 
 namespace planning {
 
     Professor::Professor(){
+        cout<<"constructeur par defaut (filleP)"<<endl;
         setId(0);
         setLastName("default");
         setFirstName("default");
     }
 
-    Professor::Professor(int i, const string& ln, const string& fn){
-        setId(i);
+    Professor::Professor(int i, const string& ln, const string& fn):Schedulable(i){
+        cout << "constructeur d'initialisation (filleP)" << endl;
         setLastName(ln);
         setFirstName(fn);
     }
 
-    Professor::Professor(const Professor& p){
-        setId(p.id);
+    Professor::Professor(const Professor& p):Schedulable(p){
+        cout<<"constructeur de copie (filleP)"<<endl;
         setLastName(p.lastName);
         setFirstName(p.firstName);
     }
 
-    Professor::~Professor() {}
+    Professor::~Professor() {
+        cout<<">>> destructeur (filleP) <<<"<<endl;
+    }
 
     void Professor::setLastName(const string& ln) { 
         lastName = ln; 
@@ -59,4 +64,4 @@ namespace planning {
         return s;
     }
 
-}
+}//end namespace

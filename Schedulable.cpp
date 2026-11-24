@@ -1,4 +1,9 @@
 #include "Schedulable.h"
+
+#include <iostream>
+#include <stdlib.h>
+#include <cstring>
+
 using namespace std;
 
 namespace planning {
@@ -14,7 +19,7 @@ namespace planning {
     }
 
     Schedulable::Schedulable(const Schedulable& s){
-        cout<<"constructeur d'initialisation (mere)"<<endl;
+        cout << "constructeur de copie (mere)"<<endl;
         setId(s.id);
     }
 

@@ -23,8 +23,8 @@ namespace planning {
             void setId(int i);
             int getId() const;
 
-            virtual string toString() const = 0;
-            virtual string tuple() const = 0;
+            virtual std::string toString() const = 0;
+            virtual std::string tuple() const = 0;
     };
 
 }
